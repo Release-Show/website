@@ -1,0 +1,81 @@
+# release.show
+
+> release.show turns GitHub releases, merged pull requests and website changes
+> into 30 to 90 second videos: branded, captioned and ready to post. Each
+> release also becomes an AI-presenter video, a blog post, an in-app release
+> widget, social posts and an email digest. Every project gets a public channel
+> page. release.show is in early access: sign-up is by waitlist, and the
+> pricing below is launch pricing for early access.
+
+Site: https://release.show/
+Early access: https://release.show/#finale (email, optionally a GitHub org or repo)
+Organization: https://github.com/Release-Show
+Maker: Factory Zero (https://factory0.ventures)
+Contact: contact@release.show
+Tagline: Every release deserves a premiere.
+Status: early access, by waitlist. Not generally available.
+
+## How it works
+
+1. Connect: link GitHub, your changelog and your website URL.
+2. Ship as usual: release.show detects new releases, merged PRs, commits and
+   changes on your website.
+3. Premiere: a branded video renders, ready for X, LinkedIn, YouTube, your
+   changelog or your customers. Every project also gets a public channel at
+   release.show/<project>.
+
+## Features
+
+- Videos from your commits: GitHub releases, PRs and commits become scenes,
+  cut and timed automatically.
+- Website change detection: before and after screen captures of what changed
+  on your site.
+- Brand kit: your logo, colors and fonts on every video.
+- Every format: 16:9, 1:1 and 9:16 vertical from one render.
+- Script, voice and avatar: an AI script, optional voiceover or an AI avatar
+  presenter (HeyGen), and captions you can edit.
+- Weekly recaps: a "This week we shipped" episode, every Friday.
+- Channels and embeds: a public channel page per project, plus an embed for
+  your changelog (one script tag).
+
+## Outputs from one release
+
+- Avatar presenter video
+- Blog post, with a hero frame taken from the video
+- In-app "What's new" release widget
+- Social posts sized for X (16:9), LinkedIn (1:1) and Shorts (9:16)
+- Email digest to customers
+
+## Integrations
+
+GitHub (releases and PRs), GitLab (merge requests), Linear (issues), Vercel
+(deploys), your website (site changes), HeyGen (avatars).
+
+## Pricing (launch pricing, early access, USD)
+
+Priced by videos per month. Avatar minutes are metered. Annual billing is two
+months free; the annual price is shown per month.
+
+- Free: $0 forever. 3 videos / month, 720p, 16:9 only, public channel page,
+  release.show watermark.
+- Indie: $29 / month, or $24 / month billed yearly. 20 videos / month, all
+  formats, 1080p, no watermark, brand kit and AI voiceover, blog posts and
+  release widget, 1 project.
+- Pro: $99 / month, or $82 / month billed yearly. 75 videos / month, 5 avatar
+  minutes included, weekly recaps and changelog embeds, social posts and email
+  digests, 3 projects, 3 seats.
+- Team: $299 / month, or $249 / month billed yearly. 250 videos / month, 20
+  avatar minutes and premium avatars, 10 projects, 10 seats, priority
+  rendering, SSO and approval workflow.
+
+Add-ons: extra avatar minute $3 / min; premium avatar minute $8 / min; 25
+extra videos $20; extra project $10 / month.
+
+Agencies and enterprise (white-label channels, client workspaces, volume
+avatar pricing): contact@release.show.
+
+## Notes for machine readers
+
+- The "acme" project, its versions (v3.2.0 and earlier), episodes and dates on
+  the page are an illustration of the product, not a customer.
+- release.show has published no usage numbers, customers or testimonials.

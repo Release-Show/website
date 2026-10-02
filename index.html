@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>release.show · Every release deserves a premiere</title>
+<meta name="description" content="release.show turns GitHub releases, merged pull requests and website changes into 30 to 90 second videos: branded, captioned and ready to post. Each release also becomes a blog post, an in-app release widget, social posts and an email digest. In early access.">
+<link rel="canonical" href="https://release.show/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#f8f6f1">
+<meta name="color-scheme" content="light">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="release.show">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://release.show/">
+<meta property="og:title" content="release.show · Every release deserves a premiere">
+<meta property="og:description" content="Turn GitHub releases, merged PRs and website changes into 30 to 90 second videos. Branded, captioned and ready to post.">
+<meta property="og:image" content="https://release.show/assets/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="release.show. Every release deserves a premiere.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="release.show · Every release deserves a premiere">
+<meta name="twitter:description" content="Turn GitHub releases, merged PRs and website changes into 30 to 90 second videos. Branded, captioned and ready to post.">
+<meta name="twitter:image" content="https://release.show/assets/og.png">
+<meta name="twitter:image:alt" content="release.show. Every release deserves a premiere.">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/releaseshow.css">
+<script>document.documentElement.classList.replace('no-js', 'js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://release.show/#organization",
+      "name": "release.show",
+      "url": "https://release.show/",
+      "description": "release.show turns software releases into short branded videos and the posts that go with them.",
+      "slogan": "Every release deserves a premiere.",
+      "email": "contact@release.show",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://release.show/assets/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://release.show/assets/og.png",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Factory Zero",
+        "url": "https://factory0.ventures/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://release.show/#website",
+      "url": "https://release.show/",
+      "name": "release.show",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://release.show/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://release.show/#app",
+      "name": "release.show",
+      "url": "https://release.show/",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Release notes and changelog video",
+      "operatingSystem": "Web",
+      "description": "Connect GitHub, your changelog and your website. release.show detects new releases, merged pull requests and site changes, and renders a 30 to 90 second branded, captioned video in 16:9, 1:1 and 9:16, plus a blog post, an in-app release widget, social posts and an email digest. Every project gets a public channel page.",
+      "featureList": [
+        "Videos from GitHub releases, pull requests and commits",
+        "Before and after captures of website changes",
+        "Brand kit: logo, colors and fonts",
+        "16:9, 1:1 and 9:16 from one render",
+        "AI script, voiceover, avatar presenter and editable captions",
+        "Weekly recap episodes",
+        "Public channel page and changelog embed",
+        "Blog posts, release widget, social posts and email digests"
+      ],
+      "offers": [
+        { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" },
+        { "@type": "Offer", "name": "Indie", "price": "29", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" },
+        { "@type": "Offer", "name": "Pro", "price": "99", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" },
+        { "@type": "Offer", "name": "Team", "price": "299", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" }
+      ],
+      "publisher": { "@id": "https://release.show/#organization" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <nav class="top__nav wrap" aria-label="Main">
+    <a class="brand" href="/" aria-label="release.show home">
+      <span class="mark" aria-hidden="true"><i class="mark__tri"></i><i class="mark__top"></i><i class="mark__bot"></i><i class="mark__dot"></i></span>
+      <span class="brand__words"><span>release<em>.show</em></span><span class="brand__sub">A factory0 venture</span></span>
+    </a>
+    <a class="top__link" href="#acts">How it works</a>
+    <a class="top__link" href="#programme">Channels</a>
+    <a class="top__link" href="#admission">Pricing</a>
+    <a class="pill pill--nav" href="#finale">Get early access</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ================================================================ 01 hero -->
+<section class="hero" id="top" data-scene data-reel="01 · Opening titles">
+  <div class="hero__photo" aria-hidden="true"></div>
+  <div class="leak leak--a" aria-hidden="true"></div>
+  <div class="leak leak--b" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="kicker kicker--wide">factory0 presents</p>
+    <h1 class="hero__title">
+      <span>Every release</span>
+      <span>deserves a <em>premiere.</em></span>
+    </h1>
+    <p class="hero__lede">release.show turns GitHub releases, merged PRs and website changes into 30 to 90 second videos. Branded, captioned and ready to post.</p>
+    <ul class="chips" aria-label="Also included">
+      <li>+ AI avatar presenters</li>
+      <li>+ Blog posts</li>
+      <li>+ Release widgets</li>
+      <li>+ Social posts</li>
+      <li>+ Email digests</li>
+    </ul>
+    <div class="hero__cta">
+      <a class="btn btn--accent" href="#finale">Get early access</a>
+      <a class="btn btn--ghost" href="#premiere">Watch the premiere</a>
+    </div>
+  </div>
+  <div class="bars bars--top" aria-hidden="true"></div>
+  <div class="bars bars--bot" aria-hidden="true">
+    <div class="wrap bars__meta"><span>SC. 01 · TK. 01 · 24 FPS</span><span>SCROLL TO ROLL <b>↓</b></span></div>
+  </div>
+</section>
+
+<!-- ================================================================ 02 premiere -->
+<section class="premiere" id="premiere" data-scene data-reel="02 · The premiere" aria-labelledby="premiere-h">
+  <div class="sticky">
+    <p class="premiere__now kicker" id="premiere-h">Now showing · acme v3.2.0 <span class="tag">illustration</span></p>
+    <div class="player dark" data-player style="--ratio:1.7778;--aspect:16 / 9">
+      <div class="player__glow" aria-hidden="true"></div>
+      <div class="player__scan" aria-hidden="true"></div>
+
+      <div class="scene scene--title" data-scene-i="0">
+        <div class="scene__presents">ACME PRESENTS</div>
+        <div class="scene__version">v3.2.0</div>
+        <div class="scene__meta">main · 9f3c2a1 · Sep 30, 2026</div>
+      </div>
+      <div class="scene scene--headline" data-scene-i="1" hidden>
+        <div class="sweep" aria-hidden="true"></div>
+        <div class="scene__big"><div>Dark mode</div><div class="accent">is here.</div></div>
+        <div class="scene__meta">23 PRs merged · 4 contributors</div>
+      </div>
+      <div class="scene scene--compare" data-scene-i="2" hidden>
+        <div class="cmp cmp--light"><i class="cmp__h"></i><i class="cmp__s"></i><i class="cmp__b"></i></div>
+        <div class="cmp cmp--dark"><i class="cmp__h"></i><i class="cmp__s"></i><i class="cmp__b"></i></div>
+        <div class="cmp__divider" aria-hidden="true"></div>
+        <span class="cmp__label cmp__label--before">BEFORE</span>
+        <span class="cmp__label cmp__label--after">AFTER</span>
+      </div>
+      <div class="scene scene--code" data-scene-i="3" hidden>
+        <div class="diff">
+          <div class="diff__file">THEME.CONFIG.TS</div>
+          <div class="diff__ctx"> export const theme = {</div>
+          <div class="diff__del">-  mode: "light",</div>
+          <div class="diff__add">+  mode: "system",</div>
+          <div class="diff__add">+  dark: tokens.night,</div>
+          <div class="diff__ctx"> }</div>
+        </div>
+      </div>
+
+      <div class="player__top">
+        <span class="onair"><i class="dot dot--live"></i>ON AIR</span>
+        <span class="player__brand">release<em>.show</em></span>
+      </div>
+      <div class="pip" data-pip hidden aria-hidden="true">
+        <span class="pip__label">AI PRESENTER</span>
+        <span class="eq eq--pip"><i></i><i></i><i></i><i></i></span>
+      </div>
+      <div class="player__caption" data-caption aria-live="off">acme ships v3.2.0.</div>
+      <div class="controls">
+        <button class="controls__play" type="button" data-play aria-label="Pause">❚❚</button>
+        <span class="controls__tc" data-tc>00:00 / 00:20</span>
+        <div class="track">
+          <div class="track__fill" data-fill></div>
+          <div class="track__knob" data-knob></div>
+          <button type="button" class="track__chapter" style="left:0" data-chapter="0" title="Title"><span class="sr">Chapter: Title</span></button>
+          <button type="button" class="track__chapter" style="left:25%" data-chapter="1" title="Headline"><span class="sr">Chapter: Headline</span></button>
+          <button type="button" class="track__chapter" style="left:50%" data-chapter="2" title="Before / after"><span class="sr">Chapter: Before and after</span></button>
+          <button type="button" class="track__chapter" style="left:75%" data-chapter="3" title="Code"><span class="sr">Chapter: Code</span></button>
+        </div>
+        <div class="formats" role="group" aria-label="Format">
+          <button type="button" class="is-on" data-format="16:9" aria-pressed="true">16:9</button>
+          <button type="button" data-format="1:1" aria-pressed="false">1:1</button>
+          <button type="button" data-format="9:16" aria-pressed="false">9:16</button>
+        </div>
+      </div>
+    </div>
+    <div class="premiere__vignette" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ================================================================ 03 problem -->
+<section class="problem" data-scene data-reel="03 · The problem" aria-labelledby="problem-h">
+  <div class="sticky sticky--center">
+    <div class="wrap problem__grid">
+      <div>
+        <p class="kicker kicker--paper">Reel 03 · The problem</p>
+        <div class="stack">
+          <h2 class="problem__h" id="problem-h" data-win="-1,.48" style="--v:1">Release notes <em>nobody reads.</em></h2>
+          <h2 class="problem__h problem__h--after" data-win=".52,2" style="--v:0">A video <em>people watch.</em></h2>
+        </div>
+        <p class="problem__lede">Teams ship constantly, but changelogs are walls of text and launch videos take hours to make. So the work goes unnoticed by customers, investors and your own company.</p>
+      </div>
+      <div class="problem__art" aria-hidden="true">
+        <div class="changelog">
+          <div class="changelog__head"><span>CHANGELOG.md</span><span>2 views</span></div>
+          <div class="changelog__body">
+            <div>## v3.2.0 (2026-09-30)</div><div>### Features</div><div>- theme: add system dark mode (#4821)</div><div>- settings: appearance toggle (#4819)</div><div>- tokens: night palette for surfaces</div><div>- charts: dark variants for all series</div><div>### Fixes</div><div>- cards: contrast ratio on hover</div><div>- nav: focus ring offset in Safari</div><div>- charts: legend overflow on mobile</div><div>- tables: sticky header z-index</div><div>### Chores</div><div>- deps: bump 14 packages</div><div>- ci: cache playwright browsers</div><div>## v3.1.4 (2026-09-23)</div><div>- search: index rebuilt, 3x faster</div><div>- search: keyboard nav in results</div><div>- fix: empty state flicker</div><div>- fix: avatar upload on Firefox</div><div>## v3.1.3 (2026-09-19)</div><div>- fix: timezone in exports</div><div>- docs: API rate limits</div><div>- deps: drop moment.js</div><div>## v3.1.2 (2026-09-15)</div><div>- fix: SSO redirect loop</div><div>- perf: lazy-load settings</div><div>- a11y: label icon buttons</div><div>## v3.1.1 (2026-09-12)</div><div>- fix: webhook retries</div><div>- fix: CSV encoding</div>
+          </div>
+        </div>
+        <div class="episode-card dark" data-win=".18,9,.42" style="--v:0">
+          <div class="episode-card__glow"></div>
+          <div class="sweep sweep--loop"></div>
+          <div class="episode-card__meta"><i class="dot dot--live"></i>EPISODE 42 · ACME v3.1.4</div>
+          <div class="episode-card__title">Search, <em>three times faster.</em></div>
+          <div class="episode-card__bar"><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ 04 acts -->
+<section class="acts" id="acts" data-scene data-reel="04 · In three acts" aria-labelledby="acts-h">
+  <div class="sticky acts__sticky">
+    <div class="acts__glow" aria-hidden="true"></div>
+    <div class="wrap acts__frame">
+      <div class="acts__head">
+        <h2 class="kicker kicker--accent" id="acts-h">Reel 04 · How it works</h2>
+        <p class="acts__tag">Ship it. We'll show it.</p>
+      </div>
+      <div class="acts__grid">
+        <div class="stack acts__numerals" aria-hidden="true">
+          <div class="numeral" data-win="-1,.33" style="--v:1">I</div>
+          <div class="numeral" data-win=".33,.66" style="--v:0">II</div>
+          <div class="numeral numeral--accent" data-win=".66,2" style="--v:0">III</div>
+        </div>
+        <ol class="stack acts__list">
+          <li class="act" data-win="-1,.33" style="--v:1">
+            <p class="act__n">ACT ONE</p>
+            <h3 class="act__h">Connect.</h3>
+            <p class="act__p">Link GitHub, your changelog and your website URL.</p>
+            <div class="rows">
+              <div><span>github.com/acme/web</span><span class="accent">connected</span></div>
+              <div><span>acme.com/changelog</span><span class="accent">connected</span></div>
+              <div><span>acme.com</span><span class="blink">watching</span></div>
+            </div>
+          </li>
+          <li class="act act--from-right" data-win=".33,.66" style="--v:0">
+            <p class="act__n">ACT TWO</p>
+            <h3 class="act__h">Ship as usual.</h3>
+            <p class="act__p">release.show detects new releases, PRs and site changes.</p>
+            <div class="feed">
+              <div class="feed__scan" aria-hidden="true"></div>
+              <div><b>#4819</b>  merged · settings toggle</div>
+              <div><b>#4821</b>  merged · theme tokens</div>
+              <div><b>9f3c2a1</b>  feat: system dark mode</div>
+              <div><b>acme.com</b>  /settings changed</div>
+              <div><b>v3.2.0</b>  release published</div>
+            </div>
+          </li>
+          <li class="act act--from-right" data-win=".66,2" style="--v:0">
+            <p class="act__n">ACT THREE</p>
+            <h3 class="act__h"><em>Premiere.</em></h3>
+            <p class="act__p">A branded video renders, ready for X, LinkedIn or YouTube, your changelog or your customers. Every project also gets a public channel.</p>
+            <ul class="chips chips--left">
+              <li>X</li><li>LinkedIn</li><li>YouTube</li><li>Changelog embed</li><li class="chips__accent">release.show/acme</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="timeline" aria-hidden="true">
+        <div class="timeline__ticks"></div>
+        <div class="timeline__rule"></div>
+        <div class="timeline__fill"></div>
+        <div class="timeline__head"></div>
+        <div class="timeline__labels"><span>I · CONNECT</span><span>II · SHIP</span><span>III · PREMIERE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ 05 features -->
+<section class="strip" id="features" data-scene data-reel="05 · Features" aria-labelledby="features-h">
+  <div class="sticky strip__sticky">
+    <div class="sprockets" aria-hidden="true"></div>
+    <div class="strip__track" data-track>
+      <div class="strip__intro">
+        <p class="kicker kicker--accent">Reel 05 · Features</p>
+        <h2 class="display-l" id="features-h">Your changelog, <em>now showing.</em></h2>
+        <p class="strip__count">SEVEN FRAMES →</p>
+      </div>
+
+      <article class="frame">
+        <div class="frame__copy"><p class="frame__n">FRAME 01 / 07</p><div><h3>Videos from your commits</h3><p>GitHub releases, PRs and commits become scenes, cut and timed automatically.</p></div></div>
+        <div class="frame__art" aria-hidden="true">
+          <div class="feed feed--frame">
+            <div class="feed__scan"></div>
+            <div><b>9f3c2a1</b> feat: system dark mode</div>
+            <div><b>e1b07d4</b> fix: card contrast</div>
+            <div><b>#4821</b> merged: theme tokens</div>
+            <div><b>#4819</b> merged: toggle</div>
+            <div><b>v3.2.0</b> → scene 01</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="frame">
+        <div class="frame__copy"><p class="frame__n">FRAME 02 / 07</p><div><h3>Website change detection</h3><p>Before/after screen captures of what changed on your site.</p></div></div>
+        <div class="frame__art" aria-hidden="true">
+          <div class="wipe">
+            <i class="wipe__light"></i><i class="wipe__dark"></i><i class="wipe__divider"></i>
+            <span class="wipe__l">BEFORE</span><span class="wipe__r">AFTER</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="frame">
+        <div class="frame__copy"><p class="frame__n">FRAME 03 / 07</p><div><h3>Brand kit</h3><p>Your logo, colors and fonts applied to every video.</p></div></div>
+        <div class="frame__art" aria-hidden="true">
+          <div class="swatches"><i></i><i></i><i></i><span>Aa</span></div>
+        </div>
+      </article>
+
+      <article class="frame">
+        <div class="frame__copy"><p class="frame__n">FRAME 04 / 07</p><div><h3>Every format</h3><p>16:9, 1:1 and 9:16 vertical from one render.</p></div></div>
+        <div class="frame__art" aria-hidden="true">
+          <div class="morph"><div class="morph__box"><i></i></div><div class="morph__list"><span>16:9</span><span>1:1</span><span>9:16</span></div></div>
+        </div>
+      </article>
+
+      <article class="frame">
+        <div class="frame__copy"><p class="frame__n">FRAME 05 / 07</p><div><h3>Script, voice &amp; avatar</h3><p>An AI script, optional voiceover or an avatar presenter, and captions you can edit.</p></div></div>
+        <div class="frame__art" aria-hidden="true">
+          <div class="voice">
+            <div class="eq eq--wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="voice__line">Dark mode follows <span>your system</span>.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="frame">
+        <div class="frame__copy"><p class="frame__n">FRAME 06 / 07</p><div><h3>Weekly recaps</h3><p>A “This week we shipped” episode, every Friday.</p></div></div>
+        <div class="frame__art" aria-hidden="true">
+          <div class="week">
+            <div class="week__n">WEEK 40</div>
+            <div class="week__days"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span></div>
+            <div class="week__sum">12 changes, one episode.</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="frame">
+        <div class="frame__copy"><p class="frame__n">FRAME 07 / 07</p><div><h3>Channels &amp; embeds</h3><p>A public channel page per project, plus an embed for your changelog.</p></div></div>
+        <div class="frame__art" aria-hidden="true">
+          <div class="embed">
+            <div class="embed__c">&lt;!-- changelog.html --&gt;</div>
+            <div class="embed__type">&lt;script src="release.show/embed.js"&gt;</div>
+            <div>&lt;release-show channel="<b>acme</b>"&gt;</div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="sprockets" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ================================================================ 06 outputs -->
+<section class="outputs" id="outputs" data-reel="06 · Every format" aria-labelledby="outputs-h">
+  <div class="wrap">
+    <div class="outputs__head" data-reveal>
+      <div>
+        <p class="kicker kicker--accent">Reel 06 · Beyond video</p>
+        <h2 class="display-xl" id="outputs-h">One release.<br><em>Every format.</em></h2>
+      </div>
+      <p class="lede">Each update also becomes a presenter-led video, a blog post, an in-app release widget, social posts and an email digest. All from the same release, all on brand.</p>
+    </div>
+
+    <div class="outputs__grid">
+      <article class="out out--avatar dark" data-reveal>
+        <div class="out__presenter" aria-hidden="true"></div>
+        <div class="out__hatch" aria-hidden="true"></div>
+        <div class="out__glow" aria-hidden="true"></div>
+        <div class="out__top"><span>OUTPUT 01 · AVATAR</span><span class="out__live"><i class="dot dot--live"></i>LIVE</span></div>
+        <div class="eq eq--avatar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="lower-third">
+          <span class="lower-third__bar"></span>
+          <div class="lower-third__box"><h3>Your AI presenter</h3><p>ACME · v3.2.0 · DARK MODE</p></div>
+        </div>
+      </article>
+
+      <article class="out out--blog" data-reveal>
+        <div class="out__top out__top--paper"><span>OUTPUT 02 · BLOG POST</span><span>acme.com/blog</span></div>
+        <p class="out__byline">PRODUCT · SEP 30, 2026 · 3 MIN READ</p>
+        <h3 class="out__blogtitle">Dark mode is here, <em>and it follows you.</em></h3>
+        <div class="out__heroframe">
+          <span class="out__heroframe-label">HERO FRAME · FROM VIDEO 00:07</span>
+          <span class="playbtn" aria-hidden="true"><i></i></span>
+        </div>
+        <div class="out__lines" aria-hidden="true"><i></i><i></i><i></i></div>
+      </article>
+
+      <article class="out out--widget" data-reveal>
+        <div class="out__top"><span>OUTPUT 03 · RELEASE WIDGET</span></div>
+        <div class="out__grid" aria-hidden="true"></div>
+        <div class="whatsnew" aria-hidden="true">What's new<i class="dot dot--pulse"></i></div>
+        <div class="widget" aria-hidden="true">
+          <div class="widget__video dark">
+            <div class="widget__glow"></div>
+            <div class="widget__meta">ACME · v3.2.0</div>
+            <div class="widget__title">Dark mode <em>is here.</em></div>
+            <div class="widget__bar"></div>
+          </div>
+          <div class="widget__list">
+            <div><span>Search, three times faster</span><span>v3.1.4</span></div>
+            <div><span>Team workspaces</span><span>v3.1.0</span></div>
+          </div>
+        </div>
+        <div class="out__caption">
+          <h3>Inside your app.</h3>
+          <p>One script tag. Users see what shipped where they work.</p>
+        </div>
+      </article>
+
+      <div class="outputs__pair">
+        <article class="out out--social" data-reveal>
+          <div class="out__top"><span>OUTPUT 04 · SOCIAL POSTS</span></div>
+          <div class="post">
+            <span class="post__avatar" aria-hidden="true"></span>
+            <div class="post__body">
+              <p class="post__who">Acme <span>· now</span></p>
+              <p class="post__text">Dark mode is here. 48 seconds on what changed in v3.2.0.</p>
+              <p class="post__fmts"><span>X · 16:9</span><span>LinkedIn · 1:1</span><span>Shorts · 9:16</span></p>
+            </div>
+          </div>
+        </article>
+        <article class="out out--email" data-reveal>
+          <div class="out__top"><span>OUTPUT 05 · EMAIL DIGEST</span></div>
+          <p class="mail__to">To: customers · Subject:</p>
+          <p class="mail__subject">This week at Acme: 12 changes</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ 07 channel -->
+<section class="channel" id="programme" data-reel="07 · The channel" aria-labelledby="channel-h">
+  <div class="wrap">
+    <div data-reveal>
+      <p class="kicker kicker--accent">Reel 07 · The channel <span class="tag">illustration</span></p>
+      <h2 class="display-xl channel__h" id="channel-h">release.show<em>/acme</em></h2>
+      <div class="channel__row">
+        <p class="lede">Every project gets a public channel. Each episode is one release, with its version, date and runtime.</p>
+      </div>
+    </div>
+    <ol class="episodes" data-episodes>
+      <li class="ep" data-reveal data-thumb-tag="v3.2.0" data-thumb-hash="9f3c2a1">
+        <span class="ep__n">EP 06</span>
+        <span class="ep__main"><span class="ep__title">Dark mode is here</span><span class="ep__tag">v3.2.0</span><span class="ep__new"><i class="dot dot--live"></i>NEW</span></span>
+        <span class="ep__meta"><time datetime="2026-09-30">Sep 30, 2026</time><span>0:48</span></span>
+      </li>
+      <li class="ep" data-reveal data-thumb-tag="v3.1.4" data-thumb-hash="c4e9a02">
+        <span class="ep__n">EP 05</span>
+        <span class="ep__main"><span class="ep__title">Search, three times faster</span><span class="ep__tag">v3.1.4</span></span>
+        <span class="ep__meta"><time datetime="2026-09-23">Sep 23, 2026</time><span>0:36</span></span>
+      </li>
+      <li class="ep" data-reveal data-thumb-tag="Week 38" data-thumb-hash="RECAP">
+        <span class="ep__n">EP 04</span>
+        <span class="ep__main"><span class="ep__title">This week we shipped</span><span class="ep__tag">Week 38</span></span>
+        <span class="ep__meta"><time datetime="2026-09-19">Sep 19, 2026</time><span>1:12</span></span>
+      </li>
+      <li class="ep" data-reveal data-thumb-tag="v3.1.0" data-thumb-hash="7ab31f0">
+        <span class="ep__n">EP 03</span>
+        <span class="ep__main"><span class="ep__title">Team workspaces</span><span class="ep__tag">v3.1.0</span></span>
+        <span class="ep__meta"><time datetime="2026-09-12">Sep 12, 2026</time><span>1:04</span></span>
+      </li>
+      <li class="ep" data-reveal data-thumb-tag="v3.0.2" data-thumb-hash="2d81bc7">
+        <span class="ep__n">EP 02</span>
+        <span class="ep__main"><span class="ep__title">Billing fixes</span><span class="ep__tag">v3.0.2</span></span>
+        <span class="ep__meta"><time datetime="2026-09-05">Sep 5, 2026</time><span>0:31</span></span>
+      </li>
+      <li class="ep" data-reveal data-thumb-tag="v3.0.0" data-thumb-hash="e03f5d9">
+        <span class="ep__n">EP 01</span>
+        <span class="ep__main"><span class="ep__title">The big redesign</span><span class="ep__tag">v3.0.0</span></span>
+        <span class="ep__meta"><time datetime="2026-08-29">Aug 29, 2026</time><span>1:30</span></span>
+      </li>
+    </ol>
+  </div>
+  <div class="thumb dark" data-thumb aria-hidden="true">
+    <div class="thumb__glow"></div>
+    <div class="thumb__meta">ACME · <span data-thumb-hash-out>9f3c2a1</span></div>
+    <div class="thumb__tag" data-thumb-tag-out>v3.2.0</div>
+    <div class="thumb__bar"></div>
+  </div>
+</section>
+
+<!-- ================================================================ 08 credits -->
+<section class="credits" data-reel="08 · Credits" aria-labelledby="credits-h">
+  <div class="wrap wrap--narrow">
+    <h2 class="kicker kicker--accent kicker--wide" id="credits-h" data-reveal>Integrations · Starring</h2>
+    <ul class="credits__list">
+      <li class="credit" data-reveal><span class="credit__role">Releases &amp; PRs</span><i class="credit__dia"></i><span class="credit__name"><img src="/assets/logos/github.svg" alt="" width="54" height="54">GitHub</span></li>
+      <li class="credit" data-reveal><span class="credit__role">Merge requests</span><i class="credit__dia"></i><span class="credit__name"><img src="/assets/logos/gitlab.svg" alt="" width="54" height="54">GitLab</span></li>
+      <li class="credit" data-reveal><span class="credit__role">Issues</span><i class="credit__dia"></i><span class="credit__name"><img src="/assets/logos/linear.svg" alt="" width="54" height="54">Linear</span></li>
+      <li class="credit" data-reveal><span class="credit__role">Deploys</span><i class="credit__dia"></i><span class="credit__name"><img src="/assets/logos/vercel.svg" alt="" width="54" height="54">Vercel</span></li>
+      <li class="credit" data-reveal><span class="credit__role">Site changes</span><i class="credit__dia"></i><span class="credit__name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3.2 3 16.8 0 20M12 2c-3 3.2-3 16.8 0 20"/></svg>Your website</span></li>
+      <li class="credit" data-reveal><span class="credit__role">Avatars</span><i class="credit__dia"></i><span class="credit__name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c1.2-4.2 4.3-6.5 8-6.5s6.8 2.3 8 6.5"/></svg>HeyGen</span></li>
+    </ul>
+    <p class="credits__note" data-reveal>Trademarks belong to their owners. Listed as integrations, not endorsements.</p>
+  </div>
+</section>
+
+<!-- ================================================================ 09 admission -->
+<section class="admission" id="admission" data-reel="09 · Admission" aria-labelledby="admission-h">
+  <div class="wrap wrap--mid">
+    <div class="admission__head" data-reveal>
+      <p class="kicker kicker--accent">Reel 09 · Pricing</p>
+      <h2 class="display-xl" id="admission-h">Admission.</h2>
+      <p class="lede lede--center">Priced by videos per month. Avatar minutes are metered, so you only pay for presenters you use. Launch pricing for early access.</p>
+      <div class="billing" role="group" aria-label="Billing period" data-billing hidden>
+        <button type="button" data-period="mo" aria-pressed="false">Monthly</button>
+        <button type="button" data-period="yr" aria-pressed="true" class="is-on">Annual <span>2 months free</span></button>
+      </div>
+    </div>
+
+    <div class="tickets">
+      <article class="ticket-wrap" data-reveal style="--rot:-5deg">
+        <div class="ticket ticket--white">
+          <div class="ticket__body">
+            <p class="ticket__admit"><span>ADMIT ONE</span><span>No. 0001</span></p>
+            <div><p class="ticket__kind">General</p><h3 class="ticket__name">Free</h3></div>
+            <p class="ticket__price"><span>$0</span><span>forever</span></p>
+            <ul class="ticket__items"><li>3 videos / month</li><li>720p, 16:9 only</li><li>Public channel page</li><li>release.show watermark</li></ul>
+          </div>
+          <div class="ticket__perf"></div>
+          <div class="ticket__foot"><a class="ticket__cta" href="#finale">Start free</a></div>
+        </div>
+      </article>
+      <article class="ticket-wrap" data-reveal style="--rot:3deg">
+        <div class="ticket ticket--paper">
+          <div class="ticket__body">
+            <p class="ticket__admit"><span>ADMIT ONE</span><span>No. 0002</span></p>
+            <div><p class="ticket__kind">Matinee</p><h3 class="ticket__name">Indie</h3></div>
+            <p class="ticket__price" data-mo="29" data-yr="24"><span>$24</span><span>/ mo, billed yearly</span></p>
+            <ul class="ticket__items"><li>20 videos / month</li><li>All formats, 1080p, no watermark</li><li>Brand kit and AI voiceover</li><li>Blog posts and release widget</li><li>1 project</li></ul>
+          </div>
+          <div class="ticket__perf"></div>
+          <div class="ticket__foot"><a class="ticket__cta" href="#finale">Start Indie</a></div>
+        </div>
+      </article>
+      <article class="ticket-wrap" data-reveal style="--rot:-2deg">
+        <div class="ticket ticket--accent">
+          <div class="ticket__body">
+            <p class="ticket__admit"><span>ADMIT ONE</span><span>No. 0003</span></p>
+            <div><p class="ticket__kind">Premiere</p><h3 class="ticket__name">Pro</h3></div>
+            <p class="ticket__price" data-mo="99" data-yr="82"><span>$82</span><span>/ mo, billed yearly</span></p>
+            <ul class="ticket__items"><li>75 videos / month</li><li>5 avatar minutes included</li><li>Weekly recaps and changelog embeds</li><li>Social posts and email digests</li><li>3 projects, 3 seats</li></ul>
+          </div>
+          <div class="ticket__perf"></div>
+          <div class="ticket__foot"><a class="ticket__cta" href="#finale">Go Pro</a></div>
+        </div>
+      </article>
+      <article class="ticket-wrap" data-reveal style="--rot:6deg">
+        <div class="ticket ticket--ink">
+          <div class="ticket__body">
+            <p class="ticket__admit"><span>ADMIT ONE</span><span>No. 0004</span></p>
+            <div><p class="ticket__kind">Ensemble</p><h3 class="ticket__name">Team</h3></div>
+            <p class="ticket__price" data-mo="299" data-yr="249"><span>$249</span><span>/ mo, billed yearly</span></p>
+            <ul class="ticket__items"><li>250 videos / month</li><li>20 avatar minutes, premium avatars</li><li>10 projects, 10 seats</li><li>Priority rendering</li><li>SSO and approval workflow</li></ul>
+          </div>
+          <div class="ticket__perf"></div>
+          <div class="ticket__foot"><a class="ticket__cta" href="#finale">Start with Team</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="addons" data-reveal>
+      <p class="addons__h">ADD-ONS</p>
+      <dl class="addons__grid">
+        <div><dt>Extra avatar minute</dt><dd>$3 / min</dd></div>
+        <div><dt>Premium avatar minute</dt><dd>$8 / min</dd></div>
+        <div><dt>25 extra videos</dt><dd>$20</dd></div>
+        <div><dt>Extra project</dt><dd>$10 / mo</dd></div>
+      </dl>
+      <div class="addons__foot">
+        <span>Agencies and enterprise: white-label channels, client workspaces, volume avatar pricing.</span>
+        <a class="pill" href="mailto:contact@release.show?subject=release.show%20for%20agencies">Talk to us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ 10 finale -->
+<section class="finale dark" id="finale" data-scene data-reel="10 · Finale" aria-labelledby="finale-h">
+  <div class="sticky finale__sticky">
+    <div class="finale__photo" aria-hidden="true"></div>
+    <div class="leader" data-win="-1,.62,.08" style="--v:1" aria-hidden="true">
+      <div class="leader__ring"><div class="leader__sweep"></div></div>
+      <div class="leader__ring leader__ring--2"></div>
+      <div class="leader__ring leader__ring--3"></div>
+      <div class="leader__v"></div><div class="leader__h"></div>
+      <div class="leader__nums">
+        <span data-win="-1,.2,.04" style="--v:1">3</span>
+        <span data-win=".2,.4,.04" style="--v:0">2</span>
+        <span class="accent" data-win=".4,.62,.04" style="--v:0">1</span>
+      </div>
+    </div>
+    <div class="finale__glow" aria-hidden="true"></div>
+    <div class="finale__copy" data-win=".66,9,.14" style="--v:0">
+      <p class="kicker kicker--accent kicker--wide">Final reel</p>
+      <h2 class="finale__h" id="finale-h">Ship it.<br><em>We'll show it.</em></h2>
+      <p class="finale__lede">release.show is in early access. Leave your email and we'll invite you to connect GitHub. Your first video is free.</p>
+
+      <form class="signup" action="mailto:contact@release.show" method="post" enctype="text/plain" novalidate aria-label="Early access sign-up" data-form>
+        <label class="sr" for="f-email">Work email</label>
+        <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required aria-describedby="e-email">
+        <label class="sr" for="f-repo">GitHub org or repo (optional)</label>
+        <input id="f-repo" name="repo" type="text" autocomplete="off" placeholder="github.com/acme (optional)" maxlength="200">
+        <button class="btn btn--accent signup__go" type="submit"><i class="playtri" aria-hidden="true"></i><span data-submit-label>Get early access</span></button>
+        <p class="signup__err" id="e-email" role="alert" hidden data-form-err></p>
+      </form>
+      <div class="signup__done" role="status" hidden data-done>
+        <p class="kicker kicker--accent"><i class="dot dot--live"></i> You're on the list</p>
+        <p class="signup__done-title">See you at the premiere.</p>
+        <p class="signup__done-text">We'll email <span data-done-email></span> when your invite is ready.</p>
+      </div>
+      <noscript><p class="finale__noscript">Or email <a href="mailto:contact@release.show?subject=release.show%20early%20access">contact@release.show</a>.</p></noscript>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot dark">
+  <div class="wrap foot__row">
+    <div class="foot__brand">
+      <div class="foot__word">
+        <span class="mark mark--xl" aria-hidden="true"><i class="mark__tri"></i><i class="mark__top"></i><i class="mark__bot"></i><i class="mark__dot"></i></span>
+        <span class="foot__name">release<em>.show</em></span>
+      </div>
+      <p class="foot__venture">A <a href="https://factory0.ventures">factory0</a> venture</p>
+    </div>
+    <nav class="foot__links" aria-label="Footer">
+      <a href="#acts">How it works</a><a href="#outputs">Formats</a><a href="#programme">Channels</a><a href="#admission">Pricing</a><a href="mailto:contact@release.show">Contact</a><a href="/llms.txt">llms.txt</a>
+      <span>© 2026 release.show</span>
+    </nav>
+  </div>
+</footer>
+
+<div class="hud" aria-hidden="true">
+  <span class="hud__reel"><i class="dot dot--live"></i><span data-hud-reel>REEL 01 · OPENING TITLES</span></span>
+  <span class="hud__bar"><i data-hud-bar></i></span>
+  <span class="hud__tc" data-hud-tc>00:00:00:00</span>
+</div>
+
+<script src="/assets/releaseshow.js" defer></script>
+</body>
+</html>

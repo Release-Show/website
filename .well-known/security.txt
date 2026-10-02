@@ -1,0 +1,5 @@
+# release.show security contact
+Contact: mailto:contact@release.show
+Expires: 2027-10-02T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://release.show/.well-known/security.txt

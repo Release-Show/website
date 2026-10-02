@@ -1,0 +1,7 @@
+# Redirects, applied by Cloudflare to the static assets.
+# Short, stable links for talks, READMEs and chat. Temporary (302) on purpose:
+# the targets may move.
+
+/github     https://github.com/Release-Show        302
+/waitlist   /#finale                               302
+/pricing    /#admission                            302
