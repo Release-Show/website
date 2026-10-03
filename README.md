@@ -180,22 +180,46 @@ with `Authentication error [code: 10000]`.
 
 ## The waitlist
 
-The form posts `{ email, product: "release.show", answers: { repo } }` to
-`https://api.release.show/v1/waitlist`, the same contract as the Colonizer and
-PosPlugin waitlists: a Cloudflare Worker running
-[Cratefield](https://cratefield.com)'s harness `waitlist` module with its own
-D1 database. That worker (`Release-Show/waitlist-backend`) **does not exist
-yet.** Until it does, every submission fails, and the form says so and offers
-`contact@release.show` instead of pretending the address was saved. To turn it
-on:
+The form posts `{ email, product: "release.show", answers: { repo }, captchaToken }`
+to `https://api.release.show/v1/waitlist`: a Cloudflare Worker
+(`Release-Show/waitlist-backend`) running [Cratefield](https://cratefield.com)'s
+harness `waitlist` module with its own D1 database. On any failure the form
+says so and offers `contact@release.show` instead of pretending the address
+was saved.
 
-1. Create `Release-Show/waitlist-backend` from `colonizer-waitlist-backend`,
-   with its own D1 database and the route `api.release.show`.
-2. Allow the origin `https://release.show`.
-3. Deploy it, and submit the form once on the live site.
+**The human check.** `captchaToken` comes from a Cloudflare Turnstile widget
+(Managed mode, site key `0x4AAAAAAFM4K5IcBaDXU6Qx`, hostnames `release.show`
+and `www.release.show`), rendered explicitly by `assets/releaseshow.js` with
+the action `waitlist`. The Worker verifies the token with siteverify, bound to
+the hostname `release.show` and that action, and answers `400`
+`.../problems/captcha-failed` when it is missing or rejected. Tokens are
+single-use, so the script resets the widget after every attempt. If the
+widget cannot load (blocked, or no `turnstile` after 10 s), the form says so
+and does not send. On localhost the widget shows a domain error: the site key
+only works on the two hostnames above, so test a real join on the live site,
+by hand.
+
+The Worker's CORS allows `https://release.show` only, and it binds Turnstile
+to that one hostname, so the form works on the apex, not on
+`www.release.show`. `www` should redirect to the apex (a Cloudflare Redirect
+Rule).
 
 No confirmation mail is sent, so the success copy says "we'll email you when
 your invite is ready", not "check your inbox".
+
+**Content-Security-Policy.** `_headers` sends a strict policy with no
+`'unsafe-inline'`: `default-src 'self'`, `frame-ancestors 'none'`,
+`object-src 'none'`, `base-uri 'self'`, and every other directive limited to
+what the pages actually load (see the comments in `_headers`). Turnstile is the
+only third party in `script-src` and `frame-src`, and `connect-src` is the
+waitlist Worker alone. Two things keep it that way, and
+`tools/build-dist.sh` refuses to build when either drifts:
+
+- an inline `<script>` is allowed only by its sha256 in `_headers`; and
+- no page may carry a `style=""` attribute. Write the style, then run
+  `python3 tools/csp-inline-styles.py`: it moves every attribute into
+  `assets/releaseshow-inline.css` as a class. Each rule weighs as much as the inline
+  style did, so the look does not change.
 
 ## House rules for edits
 

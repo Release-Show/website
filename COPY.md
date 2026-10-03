@@ -12,6 +12,7 @@ change the page wherever the product differs.
 | Claim | Status | Source |
 | :--- | :--- | :--- |
 | In early access; sign-up by waitlist | True | This repository; the form posts to the waitlist |
+| The sign-up form runs a human check (Cloudflare Turnstile) | True | `assets/releaseshow.js` renders the widget (action `waitlist`) and sends its token as `captchaToken`; the waitlist Worker verifies it with Cloudflare and refuses a join without one. Cloudflare processes the check; see its Turnstile privacy addendum |
 | Your first video is free | Brief | Canvas finale: "get your first video free" |
 | Launch pricing for early access | Brief | Canvas `TICKETS` and `ADDONS` |
 
@@ -37,7 +38,7 @@ change the page wherever the product differs.
 | Four "Customer logo" slots ("In association with") | Same |
 | "Connect GitHub" as the call to action | The connect flow is not public; every CTA leads to early access |
 | "Follow channel" button on reel 07 | Nothing to follow; the channel shown is an illustration |
-| Logos loaded from cdn.simpleicons.org and google.com/s2/favicons | Vendored to `assets/logos/` so the page makes no third-party requests besides Google Fonts |
+| Logos loaded from cdn.simpleicons.org and google.com/s2/favicons | Vendored to `assets/logos/` so the page makes no third-party requests besides Google Fonts and, for the sign-up form, Cloudflare Turnstile (`challenges.cloudflare.com`) |
 
 ## Footer: built with
 

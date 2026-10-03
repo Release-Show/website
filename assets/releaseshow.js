@@ -210,10 +210,18 @@
 
   /* --------------------------------------------------------- 10 sign-up
      Posts to the waitlist Worker at api.release.show (Release-Show/
-     waitlist-backend, Cratefield harness) as { email, product, answers }.
-     On any failure the form says so and offers the address, rather than
-     pretending the email was saved. Without JS the form is a mailto. */
+     waitlist-backend, Cratefield harness) as { email, product, answers,
+     captchaToken }. The token comes from a Cloudflare Turnstile widget
+     (action "waitlist"); the Worker verifies it with siteverify and answers
+     400 captcha-failed without one. A token is single-use, so the widget is
+     reset after every attempt. If the widget cannot load, the form says so
+     and offers the address; it never sends without a token. On any other
+     failure it says so too, rather than pretending the email was saved.
+     Without JS the form is a mailto and no widget loads. */
   var API = 'https://api.release.show/v1/waitlist';
+  var TURNSTILE = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=releaseshowTurnstile';
+  var SITEKEY = '0x4AAAAAAFM4K5IcBaDXU6Qx';
+  var CONTACT = '<a href="mailto:contact@release.show?subject=release.show%20early%20access">contact@release.show</a>';
   var form = $('[data-form]');
   if (form) {
     var email = form.elements.email;
@@ -221,8 +229,52 @@
     var err = $('[data-form-err]', form);
     var go = $('.signup__go', form);
     var label = $('[data-submit-label]', form);
+    var box = $('[data-captcha]', form);
+    var note = $('[data-captcha-note]', form);
     var fail = function (html) { err.innerHTML = html; err.hidden = false; };
     var ok = function () { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()); };
+
+    // The human check. `token` holds the current single-use token, if any.
+    var widget = null, token = null, down = false, waiting;
+    var DOWN = '! The human check didn\'t load, so the form can\'t send. Reload the page, or email ' + CONTACT + '.';
+    var captchaDown = function () {
+      if (down) return;
+      down = true;
+      token = null;
+      clearTimeout(waiting);
+      note.innerHTML = DOWN;
+      note.hidden = false;
+    };
+    var resetCaptcha = function () {
+      token = null;
+      if (widget !== null && window.turnstile) window.turnstile.reset(widget);
+    };
+    window.releaseshowTurnstile = function () {
+      clearTimeout(waiting);
+      if (!window.turnstile || down) { captchaDown(); return; }
+      box.hidden = false;
+      widget = window.turnstile.render(box, {
+        sitekey: SITEKEY,
+        action: 'waitlist',
+        theme: 'dark',
+        callback: function (t) { token = t; note.hidden = true; },
+        'expired-callback': function () { token = null; },
+        'timeout-callback': function () { token = null; },
+        'error-callback': function () {
+          token = null;
+          note.innerHTML = '! The human check hit a snag. It retries on its own; if it keeps failing, reload the page or email ' + CONTACT + '.';
+          note.hidden = false;
+        }
+      });
+    };
+    var script = document.createElement('script');
+    script.src = TURNSTILE;
+    script.async = true;
+    script.defer = true;
+    script.onerror = captchaDown;
+    document.head.appendChild(script);
+    waiting = setTimeout(function () { if (widget === null) captchaDown(); }, 10000);
+
     email.addEventListener('input', function () {
       if (email.getAttribute('aria-invalid') === 'true' && ok()) { email.setAttribute('aria-invalid', 'false'); err.hidden = true; }
     });
@@ -236,23 +288,39 @@
         return;
       }
       email.setAttribute('aria-invalid', 'false');
+      if (down) { note.hidden = true; fail(DOWN); return; }
+      if (!token) {
+        fail('! One moment: the human check below the button isn\'t done yet. When it shows a tick, send again.');
+        if (!box.hidden) box.focus();
+        return;
+      }
       go.disabled = true;
       label.textContent = 'Rolling…';
-      var body = { email: email.value.trim(), product: 'release.show' };
+      var body = { email: email.value.trim(), product: 'release.show', captchaToken: token };
       if (repo.value.trim()) body.answers = { repo: repo.value.trim() };
       fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
         .then(function (res) {
-          if (!res.ok) throw new Error(String(res.status));
+          if (res.ok) return null;
+          // Problem details name the slug in `type`: .../problems/captcha-failed.
+          return res.json().catch(function () { return {}; }).then(function (p) {
+            var type = p && typeof p.type === 'string' ? p.type : '';
+            throw new Error(/\/captcha-failed$/.test(type) ? 'captcha' : String(res.status));
+          });
+        })
+        .then(function () {
           $('[data-done-email]').textContent = body.email;
           form.hidden = true;
           $('[data-done]').hidden = false;
         })
         .catch(function (x) {
-          fail(Number(x && x.message) === 429
-            ? '! Too many tries. Give it a minute, then send again.'
-            : '! That didn\'t go through. Try again, or email <a href="mailto:contact@release.show?subject=release.show%20early%20access">contact@release.show</a>.');
+          var why = x && x.message;
+          fail(why === 'captcha'
+            ? '! The human check didn\'t go through. It has reset: wait for the tick, then send again.'
+            : why === '429'
+              ? '! Too many tries. Give it a minute, then send again.'
+              : '! That didn\'t go through. Try again, or email ' + CONTACT + '.');
         })
-        .then(function () { go.disabled = false; label.textContent = 'Get early access'; });
+        .then(function () { resetCaptcha(); go.disabled = false; label.textContent = 'Get early access'; });
     });
   }
 })();
