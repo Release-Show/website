@@ -207,6 +207,20 @@ Rule).
 No confirmation mail is sent, so the success copy says "we'll email you when
 your invite is ready", not "check your inbox".
 
+**Content-Security-Policy.** `_headers` sends a strict policy with no
+`'unsafe-inline'`: `default-src 'self'`, `frame-ancestors 'none'`,
+`object-src 'none'`, `base-uri 'self'`, and every other directive limited to
+what the pages actually load (see the comments in `_headers`). Turnstile is the
+only third party in `script-src` and `frame-src`, and `connect-src` is the
+waitlist Worker alone. Two things keep it that way, and
+`tools/build-dist.sh` refuses to build when either drifts:
+
+- an inline `<script>` is allowed only by its sha256 in `_headers`; and
+- no page may carry a `style=""` attribute. Write the style, then run
+  `python3 tools/csp-inline-styles.py`: it moves every attribute into
+  `assets/releaseshow-inline.css` as a class. Each rule weighs as much as the inline
+  style did, so the look does not change.
+
 ## House rules for edits
 
 1. **Invent nothing.** No metrics, user counts, testimonials, customer logos or
