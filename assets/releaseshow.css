@@ -504,6 +504,10 @@ button { font: inherit; }
 .signup__go[disabled] { opacity: .6; cursor: progress; }
 .signup__err { flex-basis: 100%; font-family: var(--mono); font-size: 12px; color: #ffb4a6; }
 .signup__err a { color: var(--at); }
+.signup__check { flex-basis: 100%; display: flex; justify-content: center; min-height: 65px; border-radius: 8px; }
+.signup__check:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.signup__note { flex-basis: 100%; font-family: var(--mono); font-size: 12px; color: #cfc6b8; }
+.signup__note a { color: var(--at); }
 .signup__done .kicker { display: inline-flex; align-items: center; gap: 10px; }
 .signup__done-title { font-weight: 600; font-size: clamp(32px, 3.4vw, 52px); letter-spacing: -.04em; margin-top: 14px; }
 .signup__done-text { color: #cfc6b8; margin-top: 10px; }

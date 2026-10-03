@@ -650,6 +650,8 @@
         <label class="sr" for="f-repo">GitHub org or repo (optional)</label>
         <input id="f-repo" name="repo" type="text" autocomplete="off" placeholder="github.com/acme (optional)" maxlength="200">
         <button class="btn btn--accent signup__go" type="submit"><i class="playtri" aria-hidden="true"></i><span data-submit-label>Get early access</span></button>
+        <div class="signup__check" tabindex="-1" aria-label="Human check" hidden data-captcha></div>
+        <p class="signup__note" role="status" aria-live="polite" hidden data-captcha-note></p>
         <p class="signup__err" id="e-email" role="alert" hidden data-form-err></p>
       </form>
       <div class="signup__done" role="status" hidden data-done>

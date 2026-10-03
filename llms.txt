@@ -8,7 +8,8 @@
 > pricing below is launch pricing for early access.
 
 Site: https://release.show/
-Early access: https://release.show/#finale (email, optionally a GitHub org or repo)
+Early access: https://release.show/#finale (email, optionally a GitHub org or repo;
+  the form runs a Cloudflare Turnstile human check, so sign up in a browser)
 Organization: https://github.com/Release-Show
 Maker: Factory Zero (https://factory0.ventures)
 Contact: contact@release.show
