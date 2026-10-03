@@ -79,3 +79,8 @@ avatar pricing): contact@release.show.
 - The "acme" project, its versions (v3.2.0 and earlier), episodes and dates on
   the page are an illustration of the product, not a customer.
 - release.show has published no usage numbers, customers or testimonials.
+- Built with (from the Factory Zero registry, https://factory0.ventures/stack.json):
+  live today, the waitlist runs on Cratefield's waitlist module and the site
+  and that Worker are hosted on Cloudflare. Planned, not in use yet: email by
+  Owlpost (no mail is sent today), bug reports to SupportGenius, payments by
+  Polar, screening by promptdecode, deploys by Keep Shipping.
