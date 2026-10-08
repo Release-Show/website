@@ -511,6 +511,17 @@ button { font: inherit; }
 .signup__done .kicker { display: inline-flex; align-items: center; gap: 10px; }
 .signup__done-title { font-weight: 600; font-size: clamp(32px, 3.4vw, 52px); letter-spacing: -.04em; margin-top: 14px; }
 .signup__done-text { color: #cfc6b8; margin-top: 10px; }
+.signup__done { outline: none; }
+.signup__done-text { max-width: 620px; margin-left: auto; margin-right: auto; }
+.signup__done-text strong { color: var(--night-ink); font-weight: 600; overflow-wrap: anywhere; }
+.signup__done-small { color: var(--night-mute); font-size: 14px; line-height: 1.55; margin-top: 10px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.signup__done-small a { color: var(--at); }
+.signup__again { padding: 0; border: 0; background: none; font: inherit; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.signup__go .spin { display: none; width: 14px; height: 14px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: rs-spin .7s linear infinite; }
+.signup__go[aria-busy="true"] .spin { display: inline-block; }
+.signup__go[aria-busy="true"] .playtri { display: none; }
+@keyframes rs-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .signup__go[aria-busy="true"] .spin { display: none; } }
 
 /* ------------------------------------------------------------------ footer + hud */
 .foot { background: #050404; border-top: 1px solid rgba(239, 232, 220, .08); padding: 56px 0 90px; }

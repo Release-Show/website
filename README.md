@@ -204,8 +204,12 @@ to that one hostname, so the form works on the apex, not on
 `www.release.show`. `www` should redirect to the apex (a Cloudflare Redirect
 Rule).
 
-No confirmation mail is sent, so the success copy says "we'll email you when
-your invite is ready", not "check your inbox".
+The Worker mails a double opt-in link, so a join ends on a "Check your inbox"
+panel: it names the address, points at Spam/Promotions, tells people who
+confirmed before that they are already in (the API answers the same `202`
+whatever the address's state, by design), and offers "Use a different email".
+The panel takes focus and is announced; while sending, the button is disabled
+with `aria-busy` and a spinner.
 
 **Content-Security-Policy.** `_headers` sends a strict policy with no
 `'unsafe-inline'`: `default-src 'self'`, `frame-ancestors 'none'`,
