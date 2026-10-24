@@ -4,8 +4,8 @@
 > into 30 to 90 second videos: branded, captioned and ready to post. Each
 > release also becomes an AI-presenter video, a blog post, an in-app release
 > widget, social posts and an email digest. Every project gets a public channel
-> page. release.show is in early access: sign-up is by waitlist, and the
-> pricing below is launch pricing for early access.
+> page. release.show is in development: early access is by waitlist, and the
+> pricing below is planned launch pricing, not on sale yet.
 
 Site: https://release.show/
 Early access: https://release.show/#finale (email, optionally a GitHub org or repo;
@@ -14,7 +14,7 @@ Organization: https://github.com/Release-Show
 Maker: Factory Zero (https://factory0.ventures)
 Contact: contact@release.show
 Tagline: Every release deserves a premiere.
-Status: early access, by waitlist. Not generally available.
+Status: in development; early access by waitlist. Not generally available.
 
 ## How it works
 
@@ -52,7 +52,7 @@ Status: early access, by waitlist. Not generally available.
 GitHub (releases and PRs), GitLab (merge requests), Linear (issues), Vercel
 (deploys), your website (site changes), HeyGen (avatars).
 
-## Pricing (launch pricing, early access, USD)
+## Pricing (planned launch pricing, not on sale, USD)
 
 Priced by videos per month. Avatar minutes are metered. Annual billing is two
 months free; the annual price is shown per month.

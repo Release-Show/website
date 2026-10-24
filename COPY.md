@@ -1,6 +1,6 @@
 # COPY.md: every factual claim on release.show, and what backs it
 
-release.show is in early access and has no public product repository yet, so
+release.show is in development and has no public product repository yet, so
 the source for most claims is the product brief: the Claude Design canvas
 `release.show Landing v2 White.dc.html` (claude.ai/design project
 `9ee8b43e-5b76-472b-9be0-fb4c4fd5ccc8`), checked on 2026-10-02. When the
@@ -11,10 +11,10 @@ change the page wherever the product differs.
 
 | Claim | Status | Source |
 | :--- | :--- | :--- |
-| In early access; sign-up by waitlist | True | This repository; the form posts to the waitlist |
+| In development; early access by waitlist | True | The sign-up form is a mailto to contact@release.show (no backend yet) |
 | The sign-up form runs a human check (Cloudflare Turnstile) | True | `assets/releaseshow.js` renders the widget (action `waitlist`) and sends its token as `captchaToken`; the waitlist Worker verifies it with Cloudflare and refuses a join without one. Cloudflare processes the check; see its Turnstile privacy addendum |
 | Your first video is free | Brief | Canvas finale: "get your first video free" |
-| Launch pricing for early access | Brief | Canvas `TICKETS` and `ADDONS` |
+| Planned launch pricing, not on sale yet | Brief | Canvas `TICKETS` and `ADDONS` |
 
 ## Product
 
@@ -28,7 +28,8 @@ change the page wherever the product differs.
 | Weekly recap episode every Friday | Brief | Canvas `FRAMES[5]` |
 | Public channel page per project; changelog embed with one script tag | Brief | Canvas `FRAMES[6]`, reel 06 widget |
 | Avatars by HeyGen | Brief | Canvas `FRAMES[4]`, credits |
-| Integrations: GitHub, GitLab, Linear, Vercel, your website, HeyGen | Brief | Canvas credits |
+| Integrations (planned, not connected yet): GitHub, GitLab, Linear, Vercel, your website, HeyGen | Brief | Canvas credits |
+| Factory Zero status badge (In development) | Hero footer | factory0.ventures/ventures/release-show/ |
 
 ## Removed from the canvas
 
